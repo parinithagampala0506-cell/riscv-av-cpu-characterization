@@ -1,9 +1,11 @@
 # Experiment Metadata
 
+## Recorded Simulation Environment
+
 - Simulator: gem5 25.1.0.1
-- Commit: a9b193c59b55e9266adaf29bb71dee3329270dc3
-- Compiler: riscv64-linux-gnu-gcc 15.2.0
-- Flags: -O2 -static -march=rv64gc -mabi=lp64d
+- Recorded gem5 commit: a9b193c59b55e9266adaf29bb71dee3329270dc3
+- Recorded compiler: riscv64-linux-gnu-gcc 15.2.0
+- Recorded compiler flags: -O2 -static -march=rv64gc -mabi=lp64d
 - ISA/ABI: RV64GC / LP64D
 
 ## Source SHA-256
@@ -14,24 +16,34 @@ Scenario A source:
 Scenario B source:
 0bb30bf1bb541d6f8186f2e80e4dade49b47b89066434ce4765871993673479f
 
-## Scope
+## Research Scope
 
-Scenario A: highway lane keeping.
-Scenario B: urban pedestrian detection.
-Scenario C: excluded.
+- Scenario A: Highway lane keeping.
+- Scenario B: Urban pedestrian detection.
+- Scenario C: Excluded from this study.
 
-## Outstanding experiment
+## CPU Configurations
 
-Scenario A O3 2-wide result is not yet verified and is intentionally
-not represented as a completed experiment.
+- MinorCPU
+- O3 2-wide
+- O3 4-wide
 
-## Scenario A O3 2-wide status
+## Scenario A O3 2-wide: Verification and Reporting Status
 
-This configuration is not part of the verified results. The run
-attempt using the standardized explicit-zero padding implementation
-encountered a gem5 LSQ TimeBuffer assertion.
+An earlier O3 2-wide simulation completed using the previous
+conditional-skip padding implementation and produced matching
+layer checksums.
 
-An earlier result used the previous conditional-skip padding
-implementation and is excluded from the standardized-source
-comparison. No performance metrics are claimed for this configuration.
-See `results/scenario_a_o3_2wide_status.md`.
+However, this result is excluded from the standardized performance
+comparison because its padding implementation differs from the
+standardized workload source.
+
+A subsequent attempt using the standardized explicit-zero-padding
+implementation did not complete because gem5 encountered a
+TimeBuffer assertion.
+
+Consequently, no standardized Scenario A O3 2-wide performance
+result is reported in this study. The earlier completed run is
+retained only as a historical diagnostic result.
+
+See `results/scenario_a_o3_2wide_status.md` for the experiment record.
