@@ -1,41 +1,32 @@
-# Scenario A — O3 2-Wide Experiment Status
+# Scenario A — O3 2-Wide Verification
 
-Status: NOT INCLUDED IN THE VERIFIED RESULTS.
+**Verification status: Completed**
 
-## Intended experiment
+- Scenario: A — Highway lane keeping
+- CPU: RISC-V O3 CPU, 2-wide pipeline
+- Workload: `scenario_a_cpu_old_padding`
+- Simulation: Completed successfully
+- Simulated time: 0.036945 seconds
+- Simulated ticks: 36,944,781,000
+- Instructions: 61,513,549
+- CPI: 0.600596
+- IPC: 1.665013
 
-- Workload: Scenario A — Highway lane keeping
-- CPU model: gem5 O3CPU
-- Pipeline width: 2
-- Workload source: workloads/scenario_a_cpu.c
-- Padding implementation: standardized explicit-zero padding
+## Output verification
 
-## What happened
+All four layer checksums match the expected Scenario A outputs:
 
-An attempt to run Scenario A with the standardized source and
-O3 2-wide configuration encountered a gem5 LSQ TimeBuffer assertion.
+| Layer | Checksum |
+|---|---:|
+| 1 | -53709 |
+| 2 | 14119 |
+| 3 | -16231 |
+| 4 | -3886 |
 
-The simulation did not produce a successfully validated result.
+## Standardized-source diagnostic
 
-An earlier O3 2-wide result exists, but it was generated using the
-previous conditional-skip padding implementation. It is excluded
-from the current standardized-source comparison.
+A separate attempt using `workloads/scenario_a_cpu` terminated with a gem5 O3 TimeBuffer assertion in the LSQ writeback path.
 
-## Reporting decision
+The successful result above uses the earlier padding implementation. Its instruction count therefore differs slightly from the standardized MinorCPU and O3 4-wide results.
 
-No execution time, CPI, IPC, or speedup value is reported for
-Scenario A O3 2-wide in the verified results.
-
-The missing result is treated as an experimental limitation,
-not as a successful measurement.
-
-## Current Scenario A coverage
-
-- MinorCPU: verified result available
-- O3 2-wide: not verified; excluded
-- O3 4-wide: verified result available
-
-## Future work
-
-Investigate the gem5 assertion and repeat the experiment only after
-the cause is understood and the run completes successfully.
+**Reporting note:** This experiment is verified, but should be identified as using the earlier padding implementation rather than presented as a fully standardized six-run comparison.
