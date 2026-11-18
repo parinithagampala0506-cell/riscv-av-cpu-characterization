@@ -1,0 +1,8 @@
+Scenario B CPU-only: Urban pedestrian detection
+Layer 1: 160x160x24, checksum=-628222
+Layer 2: 80x80x48, checksum=-269422
+Layer 3: 40x40x48, checksum=77367
+Layer 4: 20x20x64, checksum=-50884
+Layer 5: 10x10x64, checksum=1385
+Layer 6: 5x5x96, checksum=-4145
+Scenario B CPU-only workload completed successfully

@@ -1,0 +1,6 @@
+*.elf
+*.o
+*.out
+*.log
+m5out*/
+__pycache__/

@@ -1,0 +1,1 @@
+Scenario A CPU-only: Highway lane keeping\nLayer 1 output: 96x48x6, checksum=-53709\nLayer 2 output: 48x24x16, checksum=14119\nLayer 3 output: 24x12x32, checksum=-16231\nLayer 4 output: 12x6x48, checksum=-3886\nScenario A CPU-only workload completed successfully\n
