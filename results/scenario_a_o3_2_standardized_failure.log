@@ -1,0 +1,67 @@
+Global frequency set at 1000000000000 ticks per second
+warn: No dot file generated. Please install pydot to generate the dot file and pdf.
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+src/arch/riscv/isa.cc:321: info: RVV enabled, VLEN = 256 bits, ELEN = 64 bits
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/stats/storage.hh:278: warn: Bucket size (4) does not divide range [1:32] into equal-sized buckets. Rounding up.
+src/base/stats/storage.hh:278: warn: Bucket size (4) does not divide range [1:8] into equal-sized buckets. Rounding up.
+system.remote_gdb: Listening for connections on port 7000
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.1
+gem5 compiled Nov 16 2026 14:12:17
+gem5 started Nov 18 2026 07:43:03
+gem5 executing on PARINITHA, pid 48215
+command line: ../build/RISCV/gem5.opt --outdir=m5out_cpu_A_o3_2_standardized_final av_cpu_run.py --cmd=workloads/scenario_a_cpu --cpu=o3_2
+
+CPU model: o3_2
+L1 instruction cache: 32KiB
+L1 data cache: 32KiB
+L2 cache: 256KiB
+Clock: 1GHz
+Starting simulation
+src/sim/syscall_emul.cc:97: warn: ignoring syscall set_robust_list(...)
+      (further warnings will be suppressed)
+src/sim/syscall_emul.cc:108: warn: ignoring syscall rseq(...) returning -ENOSYS
+src/sim/syscall_emul.hh:1127: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/parinitha/gem5/av_research/workloads/scenario_a_cpu'
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+gem5.opt: src/cpu/timebuf.hh:54: void gem5::TimeBuffer<T>::valid(int) const [with T = gem5::o3::IEWStruct]: Assertion `idx >= -past && idx <= future' failed.
+Program aborted at tick 13210003
+--- BEGIN LIBC BACKTRACE ---
+../build/RISCV/gem5.opt(_ZN4gem515print_backtraceEv+0x30) [0x5b9f12c85ae0]
+../build/RISCV/gem5.opt(_ZN4gem512abortHandlerEi+0x4c) [0x5b9f12cafb9c]
+/usr/lib/x86_64-linux-gnu/libc.so.6(+0x45cb0) [0x7cb1f9045cb0]
+/usr/lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x11c) [0x7cb1f90a616c]
+/usr/lib/x86_64-linux-gnu/libc.so.6(gsignal+0x1e) [0x7cb1f9045b7e]
+/usr/lib/x86_64-linux-gnu/libc.so.6(abort+0x27) [0x7cb1f90288ec]
+/usr/lib/x86_64-linux-gnu/libc.so.6(+0x29979) [0x7cb1f9029979]
+/usr/lib/x86_64-linux-gnu/libc.so.6(__assert_fail+0xb5) [0x7cb1f903bf75]
+../build/RISCV/gem5.opt(+0xc4d5ff) [0x5b9f120df5ff]
+../build/RISCV/gem5.opt(_ZN4gem52o37LSQUnit9writebackERKNS_14RefCountingPtrINS0_7DynInstEEEPNS_6PacketE+0x16a) [0x5b9f13e4298a]
+../build/RISCV/gem5.opt(_ZN4gem52o37LSQUnit18completeDataAccessEPNS_6PacketE+0x18c) [0x5b9f13e452ec]
+../build/RISCV/gem5.opt(_ZN4gem52o33LSQ17SingleDataRequest14recvTimingRespEPNS_6PacketE+0x32) [0x5b9f13e2e482]
+../build/RISCV/gem5.opt(_ZN4gem52o33LSQ14recvTimingRespEPNS_6PacketE+0xb6) [0x5b9f13e31f66]
+../build/RISCV/gem5.opt(_ZN4gem515RespPacketQueue10sendTimingEPNS_6PacketE+0x39) [0x5b9f130372a9]
+../build/RISCV/gem5.opt(_ZN4gem511PacketQueue18sendDeferredPacketEv+0x6f) [0x5b9f1303a2af]
+../build/RISCV/gem5.opt(_ZN4gem510EventQueue10serviceOneEv+0xb7) [0x5b9f12c9cf07]
+../build/RISCV/gem5.opt(_ZN4gem59doSimLoopEPNS_10EventQueueE+0x68) [0x5b9f12cd2f98]
+../build/RISCV/gem5.opt(_ZN4gem58simulateEm+0x25e) [0x5b9f12cd367e]
+../build/RISCV/gem5.opt(+0x255b7da) [0x5b9f139ed7da]
+../build/RISCV/gem5.opt(+0x10b3ba5) [0x5b9f12545ba5]
+/usr/lib/x86_64-linux-gnu/libpython3.14.so.1.0(+0x18d105) [0x7cb1f9b8d105]
+/usr/lib/x86_64-linux-gnu/libpython3.14.so.1.0(PyObject_Call+0xab) [0x7cb1f9b271bb]
+/usr/lib/x86_64-linux-gnu/libpython3.14.so.1.0(_PyEval_EvalFrameDefault+0x681f) [0x7cb1f9c8725f]
+/usr/lib/x86_64-linux-gnu/libpython3.14.so.1.0(+0x2941a5) [0x7cb1f9c941a5]
+/usr/lib/x86_64-linux-gnu/libpython3.14.so.1.0(PyEval_EvalCode+0xd6) [0x7cb1f9c791c6]
+/usr/lib/x86_64-linux-gnu/libpython3.14.so.1.0(+0x27a819) [0x7cb1f9c7a819]
+/usr/lib/x86_64-linux-gnu/libpython3.14.so.1.0(PyObject_Vectorcall+0x5e) [0x7cb1f9b24cde]
+/usr/lib/x86_64-linux-gnu/libpython3.14.so.1.0(_PyEval_EvalFrameDefault+0x4fa0) [0x7cb1f9c859e0]
+/usr/lib/x86_64-linux-gnu/libpython3.14.so.1.0(+0x2940f7) [0x7cb1f9c940f7]
+../build/RISCV/gem5.opt(+0x1823f89) [0x5b9f12cb5f89]
+../build/RISCV/gem5.opt(main+0x218) [0x5b9f122bc4b8]
+/usr/lib/x86_64-linux-gnu/libc.so.6(+0x2a601) [0x7cb1f902a601]
+--- END LIBC BACKTRACE ---
+For more info on how to address this issue, please visit https://www.gem5.org/documentation/general_docs/common-errors/ 
+
