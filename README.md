@@ -69,3 +69,18 @@ the CNN layers were executed by a simulated AI accelerator.
 The source files, simulation configuration script, and available
 statistics are provided for inspection and reproducibility.
 The gem5 simulator must be separately installed and built for RISC-V.
+
+## Scenario A O3 2-wide experiment status
+
+The Scenario A O3 2-wide experiment is not included in the verified
+results. The attempt using the standardized explicit-zero padding
+implementation encountered a gem5 LSQ TimeBuffer assertion and did
+not complete successfully.
+
+An earlier result used the previous conditional-skip padding
+implementation. It is excluded from the current comparison to avoid
+mixing results from different source implementations.
+
+Accordingly, Scenario A currently has verified MinorCPU and O3 4-wide
+results only. See
+`results/scenario_a_o3_2wide_status.md` for the experiment record.

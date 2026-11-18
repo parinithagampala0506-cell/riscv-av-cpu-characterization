@@ -24,3 +24,14 @@ Scenario C: excluded.
 
 Scenario A O3 2-wide result is not yet verified and is intentionally
 not represented as a completed experiment.
+
+## Scenario A O3 2-wide status
+
+This configuration is not part of the verified results. The run
+attempt using the standardized explicit-zero padding implementation
+encountered a gem5 LSQ TimeBuffer assertion.
+
+An earlier result used the previous conditional-skip padding
+implementation and is excluded from the standardized-source
+comparison. No performance metrics are claimed for this configuration.
+See `results/scenario_a_o3_2wide_status.md`.
