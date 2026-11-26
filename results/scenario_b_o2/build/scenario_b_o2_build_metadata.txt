@@ -1,0 +1,9 @@
+Scenario B CPU Build Metadata
+Date: Thu Nov 26 03:32:43 UTC 2026
+Compiler: riscv64-linux-gnu-gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+Command: riscv64-linux-gnu-gcc -O2 -static -march=rv64gc -mabi=lp64d workloads/scenario_b_cpu.c -o workloads/scenario_b_cpu
+
+Source SHA-256:
+0bb30bf1bb541d6f8186f2e80e4dade49b47b89066434ce4765871993673479f  workloads/scenario_b_cpu.c
+Executable SHA-256:
+34438b4aa75e958812adc03748383408ac42e8ed0dfaf0bbe6530a67fd7422b2  workloads/scenario_b_cpu

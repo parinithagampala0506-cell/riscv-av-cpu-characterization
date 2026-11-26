@@ -5,8 +5,16 @@
 - Simulator: gem5 25.1.0.1
 - Recorded gem5 commit: a9b193c59b55e9266adaf29bb71dee3329270dc3
 - Recorded compiler: riscv64-linux-gnu-gcc 15.2.0
-- Recorded compiler flags: -O2 -static -march=rv64gc -mabi=lp64d
-- ISA/ABI: RV64GC / LP64D
+
+### Compiler Configuration
+
+- Scenario A recorded compiler flags: -O2 -static -march=rv64gc -mabi=lp64d.
+- Scenario B original optimization flag: Could not be independently recovered from the available command history or executable metadata.
+- Scenario B reproducible build: riscv64-linux-gnu-gcc 15.2.0 with -O2 -static -march=rv64gc -mabi=lp64d.
+- The newly documented Scenario B executable is byte-for-byte identical to the retained original executable, as confirmed by SHA-256.
+- Identical original compiler optimization settings across Scenarios A and B cannot be independently confirmed.
+- Scenario A recorded ISA/ABI: RV64GC / LP64D.
+- Scenario B reproducible build ISA/ABI: RV64GC / LP64D.
 
 ## Source SHA-256
 
