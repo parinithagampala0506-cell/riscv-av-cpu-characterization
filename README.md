@@ -100,7 +100,39 @@ The study uses the following metrics:
 
 Selected cache, branch-prediction, and instruction-commit statistics are also examined to help interpret the performance differences.
 
-## 6. Repository Contents
+## 6. Microarchitectural Findings (Scenario B)
+
+Additional gem5 statistics were examined to understand the behaviour of the two O3 configurations.
+
+### D-cache MSHR behaviour
+
+The O3 configurations report higher D-cache demand-miss counts than MinorCPU. However, these counts must be interpreted together with the MSHR statistics.
+
+In gem5, an MSHR hit occurs when a request matches an existing outstanding miss and is coalesced with it. An MSHR miss occurs when a new MSHR entry is required.
+
+| D-cache statistic | MinorCPU | O3 2-wide | O3 4-wide |
+|---|---:|---:|---:|
+| Demand misses | 109,459 | 247,559 | 330,108 |
+| Demand MSHR hits | 2,206 | 140,630 | 223,409 |
+| Demand MSHR misses | 107,253 | 106,929 | 106,699 |
+| Demand miss rate | 0.0254% | 0.0574% | 0.0765% |
+
+For each configuration, demand MSHR hits plus demand MSHR misses equal the reported demand misses. The increase in demand-miss counts in the O3 configurations is therefore primarily associated with increased MSHR hits, rather than an increase in new MSHR misses. These counts should not be interpreted as a proportional increase in unique cache-line misses or external memory traffic.
+
+The L2 demand-miss rates were also similar across the configurations: 34.2990% for MinorCPU, 34.3435% for O3 2-wide, and 34.4304% for O3 4-wide.
+
+### O3 instruction retirement behaviour
+
+The instruction-commit statistics show higher average retirement throughput for O3 4-wide than O3 2-wide.
+
+| Commit statistic | O3 2-wide | O3 4-wide |
+|---|---:|---:|
+| Average instructions committed per cycle | 1.516435 | 2.360899 |
+| Cycles committing the maximum width | 67.48% (2 instructions) | 42.56% (4 instructions) |
+
+Although O3 4-wide records more ROB-full and queue-full events, it achieves higher average retirement throughput. Branch-misprediction counts are nearly identical between the two configurations, suggesting that differences in branch prediction do not explain the observed performance improvement. These counters describe execution behaviour but do not establish a single cause for all pipeline stalls.
+
+## 7. Repository Contents
 
 Important experiment files include:
 
@@ -114,7 +146,7 @@ Important experiment files include:
 
 The repository also contains other workload sources, simulation outputs, and supporting experiment files.
 
-## 7. Scope and Limitations
+## 8. Scope and Limitations
 
 - The workloads are synthetic CNN-inspired convolution kernels, not trained production neural networks.
 - The study does not evaluate object-detection accuracy or use real autonomous-vehicle camera datasets.
@@ -124,12 +156,12 @@ The repository also contains other workload sources, simulation outputs, and sup
 - Scenario C is not included in this study.
 - Scenario A O3 2-wide is excluded from the standardized comparison because the available completed run used a different padding implementation.
 
-## 8. Reproducibility
+## 9. Reproducibility
 
 The repository provides workload source code, simulation configuration files, and retained result files for inspection.
 
 For reproduction, use the documented simulator environment and ensure that the workload source and gem5 configuration correspond to the experiment being repeated.
 
-## 9. Repository
+## 10. Repository
 
 GitHub: https://github.com/parinithagampala0506-cell/riscv-av-cpu-characterization
