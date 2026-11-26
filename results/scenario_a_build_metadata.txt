@@ -1,0 +1,14 @@
+Scenario A build metadata
+Recorded date: 2026-11-26
+Compiler: riscv64-linux-gnu-gcc
+Compiler version: Not independently recorded for the archived binary
+Build command: riscv64-linux-gnu-gcc -O2 -static -march=rv64gc -mabi=lp64d workloads/scenario_a_cpu.c -o scenario_a_cpu
+
+Source SHA-256:
+5eddc31519b18c8a51be8336c9ebae249f86e55fdcdc58a910021202c2147a41  workloads/scenario_a_cpu.c
+
+Binary SHA-256:
+a91979d2871d2a577923ed9173f212abc1bdbe70d408545b9e1aec10835413c1  scenario_a_cpu
+
+Binary information:
+scenario_a_cpu: ELF 64-bit LSB executable, UCB RISC-V, RVC, double-float ABI, version 1 (GNU/Linux), statically linked, BuildID[sha1]=c58d31a5ff8055e242414067b9e2fdbcdc086ead, for GNU/Linux 4.15.0, not stripped
