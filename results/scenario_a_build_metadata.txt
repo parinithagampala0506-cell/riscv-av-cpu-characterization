@@ -1,7 +1,7 @@
 Scenario A build metadata
 Recorded date: 2026-11-26
 Compiler: riscv64-linux-gnu-gcc
-Compiler version: Not independently recorded for the archived binary
+Compiler version: GCC 15.2.0 (Ubuntu 15.2.0-16ubuntu1), verified from archived binary .comment section
 Build command: riscv64-linux-gnu-gcc -O2 -static -march=rv64gc -mabi=lp64d workloads/scenario_a_cpu.c -o scenario_a_cpu
 
 Source SHA-256:
