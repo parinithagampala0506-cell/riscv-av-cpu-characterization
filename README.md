@@ -141,7 +141,11 @@ Important experiment files include:
 - `results/scenario_b_cpu_minor_corrected_stats.txt` – Scenario B MinorCPU statistics.
 - `results/scenario_b_cpu_o3_2wide_stats.txt` – Scenario B O3 2-wide statistics.
 - `results/scenario_b_cpu_o3_4wide_stats.txt` – Scenario B O3 4-wide statistics.
-- `results/scenario_b_cpu_checksum_stdout.txt` – Saved Scenario B CPU-only checksum and completion output.
+- `results/scenario_b_cpu_minor_stdout.txt` – Scenario B MinorCPU checksums and completion output.
+- `results/scenario_b_cpu_o3_2wide_stdout.txt` – Scenario B O3 2-wide checksums and completion output.
+- `results/scenario_b_cpu_o3_4wide_stdout.txt` – Scenario B O3 4-wide checksums and completion output.
+- `results/scenario_a_build_metadata.txt` – Scenario A compiler and build information.
+- `results/scenario_b_o2/build/scenario_b_o2_build_metadata.txt` – Scenario B reproducible build information.
 - `EXPERIMENT_METADATA.md` – Recorded experiment metadata and documentation.
 
 The repository also contains other workload sources, simulation outputs, and supporting experiment files.
